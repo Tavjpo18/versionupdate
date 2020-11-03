@@ -4,7 +4,7 @@ let fileU = null;
 let jSONData = []
 axios({
     method: 'get',
-    url:  'http://18.141.138.219:3000/sinhvien'
+    url:  'http://54.251.7.128:3000/sinhvien'
 })
     .then((result) => {
         console.log(result.data)
@@ -44,7 +44,7 @@ const addSinhVien = document.getElementById('them').addEventListener('click', (e
     bodyFormData.append('lop', cl);
     axios({
         method: 'post',
-        url:  'http://18.141.138.219:3000/sinhvien',
+        url:  'http://54.251.7.128:3000/sinhvien',
         data: bodyFormData,
         headers:
             { 'Content-Type': 'multipart/form-data'}
@@ -60,7 +60,7 @@ const addSinhVien = document.getElementById('them').addEventListener('click', (e
 const del = (value) => {
     axios({
         method: 'delete',
-        url:  'http://18.141.138.219:3000/sinhvien' + value,
+        url:  'http://54.251.7.128:3000/sinhvien' + value,
     })
         .then((result) => {
             console.log(result.data)
@@ -93,7 +93,7 @@ const editSinhVien = document.getElementById('sua').addEventListener('click', (e
     e.preventDefault()
     axios({
         method: 'patch',
-        url:  'http://18.141.138.219:3000/sinhvien'+ document.getElementById('mssv').value,
+        url:  'http://54.251.7.128:3000/sinhvien'+ document.getElementById('mssv').value,
         data: {
             hoten: document.getElementById('hoten').value,
             email: document.getElementById('email').value
