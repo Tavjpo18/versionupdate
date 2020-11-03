@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>CRUD APP</title>
+</head>
+
+<body>
+    <div class="main-content">
+        <h3>CRUD Using RestfulAPI</h3>
+
+        <form>
+            <label for="">AVATAR: </label><input type="file" id="image" accept="image/*" name="image" onchange="getFile(this)" required><br><br>
+            <label for="">MSSV: </label><input type="number" id="mssv" name="mssv" required><br><br>
+            <label for="">NAME: </label><input type="text" id="hoten" name="hoten" required><br><br>
+            <label for="">EMAIL: </label><input type="email" id="email" name="email" required><br><br>
+            <label for="">Lop: </label><select name="class1" id="class1">
+                <option value="13ATT">13ATT</option>
+                <option value="13BTT">13BTT</option>
+            </select><br>
+
+            <button id="them">ADD</button>
+            <button id="sua">EDIT</button>
+            <img id="wait" src="" alt="">
+        </form>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>AVATAR</th>
+                    <th>MSSV</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody id="sinhvienjs">
+               
+            </tbody>
+        </table>
+    </div>
+
+    <script id="data-template" type="text/html">
+        <tr>
+            <td><img width="50px" height="50px" src="{{avatar}}" alt=""></td>
+            <td>{{mssv}}</td>
+            <td>{{hoten}}</td>
+            <td>{{email}}</td>
+            <td><button onclick="del({{mssv}})">DELETE</button> | <button onclick="edit({{mssv}})">EDIT</button></td>
+        </tr>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+
+</body>
+
+</html>
